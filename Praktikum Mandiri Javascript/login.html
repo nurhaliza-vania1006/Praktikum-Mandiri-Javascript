@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login</title>
+
+    <style>
+        h1{
+            font-size: 30px;
+            text-align: center;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        #box{
+            position: fixed;
+            left: 30%;
+            border-radius: 8px;
+            background: #fff;
+            width: 320px;
+            margin: 15px auto;
+            padding: 20px 40px;
+            display: block;
+            text-align: center;
+            border: 2px solid #ddd;
+            box-shadow: 2px 2px #ddd;
+        }
+        body input{
+            padding: 14px;
+            border-radius: 5px;
+            margin: 10px;
+            width: 250px;
+            border: 2px solid #ddd ;
+           
+        }
+
+        body input:focus{
+            border-color: #07acec;
+            outline: none;
+        }
+
+        body button  {
+            background: #07acec;
+            color: #fff;
+            font-weight: bold;
+            padding: 13px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Login</h1>
+        <form action='login.html'>
+            <input type="text" id="nama" placeholder="Username">
+            <br>
+            <input type="password" id="sandi" placeholder="Password">
+            <button action="submit" onclick="simpan()">Log In</button>
+        </form>
+    </div>
+
+
+    <script>
+        function simpan(){
+        var nama = document.getElementById("nama").value
+        var sandi = document.getElementById("sandi").value
+
+            if(nama == "vania1009" && sandi=="integrity"){
+                alert("Login Successfully");
+                return false;
+            } else {
+                alert("Login Failed");
+            }
+        }
+    </script>
+</body>
+</html>

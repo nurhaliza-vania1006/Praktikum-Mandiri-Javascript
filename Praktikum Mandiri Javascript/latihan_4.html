@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+
+    <style>
+        img{
+            width: 35%;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function pilihan(){
+            let list_kuradarat = document.getElementById("kuradarat");
+            let idx = list_kuradarat.selectedIndex;
+            console.log("kuradarat index ke- " + idx + " adalah " + list_kuradarat[idx].value);
+            let area_foto = document.getElementById("foto")
+            area_foto.src = "foto/" + list_kuradarat[idx].value + ".jpg";
+            alert("Ini Foto Kura-kura: " + list_kuradarat[idx].value)
+        }
+    </script>
+</head>
+<body>
+    <form id="form_1">
+        Pilih Jenis Kura-Kura Darat : <select  id="kuradarat" onchange="pilihan()">
+            <option>Silahkan Pilih Jenis</option>
+            <option value="Aldabra">Kura-kura Aldabra</option>
+            <option value="Sulcata">Kura-kura Sulcata</option>
+            <option value="Cherry Head">Kura-kura Cherry Head</option>
+            <option value="Indian Star">Kura-kura Indian Star</option>
+            <option value="Leopard Pardalis">Kura-kura Leopard Pardalis</option>
+        </select>
+    </form>
+    <br>
+    <img src="foto/Aldabra.jpg" alt="kura-kura aldabra" id="foto">
+</body>
+</html>

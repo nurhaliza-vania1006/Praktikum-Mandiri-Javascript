@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation_Nurhaliza Vania Akbariani</title>
+    <style>
+        h3{
+            text-align: center;
+            font-size: 25px;
+        }
+        table{
+            border: 2px solid #ddd;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 30px;
+        }
+
+        input{
+            padding: 3px;
+            width: 100%;
+            
+        }
+
+        button{
+            width: 80px;
+            background: #07acec;
+            color: #fff;
+            font-weight: bold;
+            padding: 13px 15px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="form-input">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <h3>Form Pemesanan</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nama">Nama </label></td>
+                <td>
+                    <input type="text" id="nama" placeholder="Nama Lengkap" required maxlength="30"> 
+                    
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>
+                    <input type="email" id="email" placeholder="Email" required> 
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jam">Jam Keberangkatan</label></td>
+                <td>
+                    <input type="time" id="jam" required> 
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tujuan">Tujuan Keberangkatan</label></td>
+                <td>
+                    <input type="text" id="tujuan" placeholder="Tujuan Keberangkatan" required> 
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nama">Jumlah Tiket</label></td>
+                <td>
+                    <input type="number"  id="tiket" max="10" min="1" placeholder="Jumlah Tiket" required> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" onclick="pemesanan()">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+
+<h4>
+    <div id="hasil_data"></div>
+
+
+    <script>
+        function showData(e) {
+            const wrapper = document.getElementById('hasil_data');
+            const nama = document.getElementById('nama')
+            const email = document.getElementById('email')
+            const jam = document.getElementById('jam')
+            const tujuan = document.getElementById('tujuan')
+            const tiket = document.getElementById('tiket')
+
+            wrapper.innerHTML = `<table>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>:</td>
+                                    <td>${nama.value}</td>  
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td>${email.value}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jam Keberangkatan</td>
+                                    <td>:</td>
+                                    <td>${jam.value}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tujuan Keberangkatan</td>
+                                    <td>:</td>
+                                    <td>${tujuan.value}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jumlah Tiket</td>
+                                    <td>:</td>
+                                    <td>${tiket.value}</td>
+                                </tr>
+        </table>`
+
+            e.preventDefault();
+        }
+
+        const form = document.getElementById('form-input');
+        form.addEventListener('submit', showData);
+    </script>
+</h4>
+</body>
+</html>
